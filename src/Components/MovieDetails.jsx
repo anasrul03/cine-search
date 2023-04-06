@@ -1,106 +1,35 @@
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-import isEmpty from "lodash/isEmpty";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
-import React from "react";
+function MovieDetails() {
+  const [movie, setMovie] = useState({});
+  const { id } = useParams();
 
+  useEffect(() => {
+    const apiKey = 'd62dc3f89ffd51183a0e62149a3931a4';
+    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
 
+    const fetchMovie = async () => {
+      try {
+        const response = await fetch(url);
+        const json = await response.json();
+        setMovie(json);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-class MovieDetails extends React.Component {
+    fetchMovie();
+  }, [id]);
 
-  render() {
-
-    const { info } = this.props;
-    console.log("info here", info);
-
-
-    if (isEmpty(info)) {
-      return (
-        <>
-    
-          <Loader
-            type="Puff"
-            color="red"
-            height={100}
-            width={100}
-            timeout={5000} //3 secs
-            style={{
-              position: "absolute",
-              left: "50%",
-              top: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-          />
-        </>
-      );
-
-
-
-    } else
-      return (
-        <>
-
-          <div className="ui container">
-            <div class="ui celled grid" style={{ marginTop: 80 }}>
-              <div class="row">
-                <div class="six wide column centered">
-                  <img src={info.Poster} />
-                </div>
-
-                <div class="eight wide column">
-                  <span>
-                    <h1 className="ui red inverted header">{info.Title}</h1>(
-                    {info.Genre})
-                  </span>{" "}
-
-                  <div className="ui subheader">{info.Language}</div>
-
-                  <br />
-                  <div className="ui subheader">
-                    IMDB Rating:{info.imdbRating}
-                  </div>
-
-                  <h3>Cast</h3>
-                  <p>{info.Actors}</p>
-
-                  <h3>Plot</h3>
-                  <p>{info.Plot}</p>
-
-                  <div class="ui grid">
-                    <div class="ten wide column">
-                      <h3>Director</h3>
-                      <p>{info.Director}</p>
-                    </div>
-
-                    <div class="ten wide column tablet six wide computer column">
-                      {" "}
-                      <h3>Box Office Collection</h3>
-                      <p>{info.BoxOffice}</p>
-                    </div>
-                  </div>
-                </div>
-  
-              </div>
-              <div class="row">
-                <div class="three wide column">
-                  <p>Runtime</p>
-                  <p>{info.Runtime}</p>
-                </div>
-                <div class="ten wide column">
-                  <p>
-                    <strong>Writers:</strong> {info.Writer}
-                  </p>
-                </div>
-                <div class="three wide column">
-                  <p>Release date</p>
-                  <p>{info.Released}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
-      );
-  }
+  return (
+    <div>
+      <h1>{movie.title}</h1>
+      <img src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} alt={`${movie.title} Poster`} />
+      <p>{movie.release_date}</p>
+      <p>{movie.overview}</p>
+    </div>
+  );
 }
 
 export default MovieDetails;
