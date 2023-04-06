@@ -1,10 +1,10 @@
 import "./App.css";
-import MovieCard from "./Components/MovieCard";
+import Section from "./Components/Section";
 
 function App() {
   return (
     <div>
-      <MovieCard />
+      <Section />
     </div>
   );
 }
