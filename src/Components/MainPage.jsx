@@ -1,18 +1,18 @@
 import '../App.css';
-import requests from '../Requests';
-import React, { useEffect, useState } from 'react';
-import axios from "axios";
+import React from 'react';
 
-const MainPage = (props) => {
-  const [movies, setMovies] = useState([]);
-  const movie = movies[Math.floor(Math.random() * movies.length)];
-
-  useEffect(() => {
-    axios.get(requests.requestPopular).then((response) => {
-      setMovies(response.data.results);
-    });
-}, []);
-
-}
+const MainPage = ({movies}) => {
+  // console.log(movies);
+  const poster_url = 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2';
+  return (
+    <>
+     {movies?.results?.map((movie) => (
+     <div key={movie.id} className='d-flex justify-content-start m-3'>
+        <img src={poster_url + movie.poster_path} alt = "Poster"/>
+     </div>
+     ))}
+    </>
+  );
+};
     
 export default MainPage;
