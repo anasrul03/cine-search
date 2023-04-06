@@ -1,38 +1,26 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import MainPage from "./Components/MainPage";
-// import "./Styles/MainPage.scss"
-import AboutUs from "./Components/AboutUs";
-// import MovieCard from "./Components/MovieCard";
+import React, { useState } from "react";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import MovieSearch from "./Components/MovieSearch";
+import MovieDetails from "./Components/MovieDetails";
+import MovieCard from "./Components/MovieCard";
+import './Components/Styles/MovieDetails.scss';
 
-const App = () => {
-  const [movies, setMovies] = useState([]);
-  // const [searchValue, setSearchValue] = useState([]);
-
-  const getMovieRequest = async () => {
-    const url = "https://api.themoviedb.org/3/movie/now_playing?api_key=d62dc3f89ffd51183a0e62149a3931a4"
-    const response = await fetch(url);
-    const responseJson = await response.json();
-
-    // console.log(responseJson);
-    setMovies(responseJson);
-  };
-
-  useEffect(() => {
-    getMovieRequest();
-  }, []);
+function App() {
 
   return (
-    // <div className="wrapper">
-    //   <div className="row">
-    //     <MainPage movies = {movies} />
-    //   </div>
-    //   {/* <MovieCard /> */}
-    // </div>
-    <>
-      <AboutUs />
-    </>
+    <BrowserRouter>
+ 
+      <div>
+        <MovieCard/>
+
+      </div>
+      <Routes>
+      <Route path="/" element={<MovieSearch />} />
+        <Route path="/movie/:id" element={<MovieDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
