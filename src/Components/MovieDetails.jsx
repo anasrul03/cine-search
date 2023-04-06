@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
+
 function MovieDetails() {
   const [movie, setMovie] = useState({});
   const { id } = useParams();
@@ -23,12 +24,34 @@ function MovieDetails() {
   }, [id]);
 
   return (
-    <div>
-      <h1>{movie.title}</h1>
-      <img src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} alt={`${movie.title} Poster`} />
-      <p>{movie.release_date}</p>
-      <p>{movie.overview}</p>
-    </div>
+    
+    <div className="movie-details">
+    <h1>{movie.title}</h1>
+    <img src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`} alt={`${movie.title} Poster`} />
+    <table>
+      <tbody>
+        <tr>
+          <th>Release Date:</th>
+          <td>{movie.release_date}</td>
+        </tr>
+        <tr>
+          <th>Genres:</th>
+          <td>
+            {movie.genres && movie.genres.map(genre => genre.name).join(', ')}
+          </td>
+        </tr>
+        <tr>
+          <th>Rating:</th>
+          <td>{movie.vote_average ? movie.vote_average.toFixed(1) : '-' }</td>
+        </tr>
+        <tr>
+          <th>Overview:</th>
+          <td>{movie.overview}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
   );
 }
 

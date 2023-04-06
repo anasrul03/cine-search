@@ -4,21 +4,16 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import MovieSearch from "./Components/MovieSearch";
 import MovieDetails from "./Components/MovieDetails";
 import MovieCard from "./Components/MovieCard";
+import './Components/Styles/MovieDetails.scss';
 
 function App() {
 
   return (
     <BrowserRouter>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-        </ul>
-      </nav>
+ 
       <div>
         <MovieCard/>
-        
+
       </div>
       <Routes>
       <Route path="/" element={<MovieSearch />} />
