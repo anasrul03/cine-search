@@ -1,0 +1,129 @@
+$primary-color: #92bcea;
+$secondary-color: #171a21;
+$body-color: #171a21;
+$movie-title-color: white;
+$movie-year-color: white;
+
+
+.movie-details {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: $secondary-color;
+   
+    
+  
+    .movie-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        border-radius: 25px;
+        
+      
+        .movie-title {
+          font-size: 32px;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+      
+        .movie-image {
+          max-width: 400px;
+          margin-bottom: 20px;
+        }
+      
+        .movie-release-date {
+          font-size: 18px;
+          margin-bottom: 10px;
+          
+        }
+      
+        .movie-overview {
+          font-size: 16px;
+          line-height: 1.5;
+        }
+      }
+      
+    .movie-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  
+    .movie-image {
+      max-width: 400px;
+      margin-bottom: 20px;
+    }
+  
+    .movie-release-date {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+  
+    .movie-overview {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+     p{
+        color: $movie-year-color;
+
+        &:hover {
+            color: $primary-color;
+          }
+     }
+
+     h1 {
+        color: $movie-title-color;
+        &:hover {
+            color: $primary-color;
+          }
+     }
+
+     img {
+      
+      
+      margin: 1rem;
+      max-height: 300px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  
+    table {
+      display: flex;
+      border-radius: 25px;
+      width: 50%;
+      margin-top: 1rem;
+      border-collapse: collapse;
+      border: 1px solid #ddd;
+      font-size: 1.2rem;
+      
+      background-color: $primary-color;
+
+
+      th,
+      td {
+        padding: 0.8rem;
+        text-align: left;
+      }
+  
+      th {
+        width: 30%;
+        font-weight: bold;
+      }
+      tr {
+        width: 30%;
+        font-weight: bold;
+        font: $body-color;
+        
+      }
+    }
+  
+  }
+
+
+
+
+
+
+  
