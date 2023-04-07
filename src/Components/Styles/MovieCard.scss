@@ -42,6 +42,7 @@ h1 {
 
 .wrapper {
   overflow-x: scroll;
+  overflow-y: hidden;
   scroll-behavior: smooth;
   padding: 10px;
   display: flex;
@@ -51,7 +52,7 @@ h1 {
   align-items: center; // vertically center align items
   justify-content: center; // horizontally center align items
   width: 200vh;
-  height: 50vh;
+  height: 53vh;
 
   .card {
     padding-bottom: 50px;
