@@ -4,6 +4,7 @@ $body-color: #171a21;
 $movie-title-color: white;
 $movie-year-color: white;
 
+// animation
 @keyframes fadeInOut {
   0% {
     top: 0;
@@ -20,6 +21,12 @@ $movie-year-color: white;
   }
 }
 
+/* Hide scrollbar for all elements */
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 body {
   background-color: $body-color;
 }
@@ -34,21 +41,23 @@ h1 {
 }
 
 .wrapper {
-  overflow-x: hidden;
+  overflow-x: scroll;
   scroll-behavior: smooth;
-  padding: 50px;
+  padding: 10px;
   display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
+  flex-direction: column;
   animation: fadeInOut 1s linear;
-  height: 600px;
-  width: max-content;
-  vertical-align: middle;
+  flex-wrap: wrap;
+  align-items: center; // vertically center align items
+  justify-content: center; // horizontally center align items
+  width: 200vh;
+  height: 50vh;
+
   .card {
-    padding-bottom: 150px;
+    padding-bottom: 50px;
     max-height: 300px;
-    margin: 5px 30px;
+    max-width: 200px;
+    margin: 20px 20px;
     position: relative;
     flex: 1;
     flex-basis: 260px;
@@ -85,8 +94,9 @@ h1 {
       font-size: 20px;
       padding: 10px 20px;
       margin: 15px 0px 5px 0px;
-      word-wrap: break-word;
-      text-overflow: clip;
+      // word-wrap: break-word;
+      // word-break: break-all;
+      // text-overflow: ellipsis;
 
       &:hover {
         color: $primary-color;
