@@ -1,0 +1,71 @@
+.header{
+    background-color: #121027;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 20px;
+    width: 1650px;
+    height:50px;
+//     min-height: 80vh;
+//    // display: flex;
+//     flex-direction: column;
+    
+}
+.logo{
+    float:left;
+    margin-top: -25px;
+    font-size:30px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+}
+.login-button button{
+      
+      float:right;
+      align-items: center;
+      background-color: #0A66C2;
+      border: 0;
+      border-radius: 100px;
+      box-sizing: border-box;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      font-size: 16px;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 10px;
+      max-width: 500px;
+      min-height: 30px;
+      min-width: 0px;
+      overflow: hidden;
+      padding: 0px;
+      padding-left: 40px;
+      padding-right: 40px;
+      text-align: center;
+      margin-right: 30px;
+      margin-top: 10px;
+}
+.input-search{
+  position: absolute;
+  top: 40px;
+  left: 65%;
+  transform: translateY(-50%);
+  
+}
+.input-search input{
+  padding: 8px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  font-size: 16px;
+  height:10px;
+  width:250px;
+  
+}
+
+.input-search button{
+     width:80px;
+     height:28px;
+}
