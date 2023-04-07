@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import axios from "axios";
 // import "./Styles/Section.scss";
+import ApiStore from "./api-store";
+import observer from "mobx-react";
 
 export function LatestMovie() {
   const [error, setError] = useState(null);
@@ -69,9 +71,26 @@ export function PopularMovie() {
   return (
     <div>
       {/* <h1>Latest Movie</h1> */}
-      <div className="latest">
+      <div className="popular">
         <MovieCard getmMovies={movies} />
       </div>
     </div>
   );
 }
+
+// const MovieCarousel = () => {
+//   ApiStore.fetchData();
+
+//   return (
+//     <div>
+//       {/* <img
+//         className="backdrop"
+//         src={apiImgUrl + "/ovM06PdF3M8wvKb06i4sjW3xoww.jpg"}
+//         alt="backdrop"
+//       /> */}
+//       <MovieCard getmMovies={ApiStore.movies} />
+//     </div>
+//   );
+// };
+
+// export default observer(MovieCarousel);

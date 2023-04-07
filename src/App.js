@@ -1,25 +1,16 @@
 import "./App.css";
-import React, { useState } from "react";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-// import MovieSearch from "./Components/MovieSearch";
-import MovieDetails from "./Components/MovieDetails";
-import "./Components/Styles/MovieDetails.scss";
 import { LatestMovie, PopularMovie } from "./Components/Section";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div>
-        <h1>Now Showing</h1>
-        <LatestMovie />
-        <h1>Trending Now</h1>
-        <PopularMovie />
-      </div>
-      <Routes>
-        {/* <Route path="/" element={<MovieSearch />} /> */}
-        {/* <Route path="/movie/:id" element={<MovieDetails />} /> */}
-      </Routes>
-    </BrowserRouter>
+    <div>
+      {/* <h1>Pick Your Movie</h1> */}
+      {/* <MovieCarousel /> */}
+      <h1>Now Showing</h1>
+      <LatestMovie />
+      <h1>Trending Movies</h1>
+      <PopularMovie />
+    </div>
   );
 }
 
