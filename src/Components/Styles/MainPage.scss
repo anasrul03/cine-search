@@ -1,0 +1,20 @@
+$primary-color: #92bcea;
+$secondary-color: #171a21;
+$body-color: #171a21;
+
+body {
+    background-color: $body-color;
+}
+
+.wrapper {
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: center;
+    // align-items: center;
+
+    .row {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+}
+
