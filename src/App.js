@@ -5,15 +5,17 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import MovieDetails from "./Components/MovieDetails";
 import "./Components/Styles/MovieDetails.scss";
 import { LatestMovie, PopularMovie } from "./Components/Section";
+import HomePage from "./Components/HomePage";
 
 function App() {
   return (
     <BrowserRouter>
       <div>
-        <h1>Now Showing</h1>
+        {/* <h1>Now Showing</h1>
         <LatestMovie />
         <h1>Trending Now</h1>
-        <PopularMovie />
+        <PopularMovie /> */}
+        <HomePage />
       </div>
       <Routes>
         {/* <Route path="/" element={<MovieSearch />} /> */}

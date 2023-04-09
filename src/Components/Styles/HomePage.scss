@@ -1,0 +1,95 @@
+$primary-color: #92bcea;
+$secondary-color: #171a21;
+$body-color: #171a21;
+$movie-title-color: white;
+$movie-year-color: white;
+$text-color: white;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    background-color: $body-color;
+    font-family: 'Monsterrat', sans-serif;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: $primary-color;
+    margin-bottom: 2rem;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  
+    &__header {
+      text-align: center;
+  
+      h1 {
+        font-size: 4rem;
+        color: $primary-color;
+        margin-bottom: 1rem;
+      }
+  
+      h3 {
+        font-size: 1.5rem;
+        color: $primary-color;
+        margin-bottom: 2rem;
+      }
+    }
+  
+    &__body {
+      text-align: center;
+  
+      p {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        color: $text-color;
+        margin-bottom: 2rem;
+      }
+        // &:hover {
+        //   background-color: darken($primary-color, 10%);
+        // }
+      }
+
+      &__gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        gallery-item {
+            // flex-basis: 25%;
+            // flex-grow: 1;
+            // flex-shrink: 1;
+            height: 200px;
+            margin-bottom: 20px;
+            // border-radius: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .__gallery {
+                flex-basis: 100%;
+            }
+            
+        }
+      }
+
+      &__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem;
+        
+        h2 {
+            color: $primary-color;
+        }
+
+        p {
+            color: $text-color;
+        }
+      }
+  }
