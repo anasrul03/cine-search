@@ -1,16 +1,17 @@
 import React from "react";
-import ApiStore from "./api-store";
 import { observer } from "mobx-react-lite";
-import "./Styles/MovieCard.scss";
+import ApiStore from "../api-store";
 
-function MovieCard() {
+const TrendingMovie = () => {
   const apiImgUrl = "https://image.tmdb.org/t/p/w500";
-  const results = ApiStore.movies.results;
+  const results = ApiStore.trending_movie.results;
 
   React.useEffect(() => {
-    ApiStore.fetchSearchData();
+    ApiStore.fetchTrendingMovie();
   }, []);
+
   console.log(results);
+
   return (
     <div>
       <div className="wrapper">
@@ -26,6 +27,6 @@ function MovieCard() {
       </div>
     </div>
   );
-}
+};
 
-export default observer(MovieCard);
+export default observer(TrendingMovie);

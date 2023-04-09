@@ -1,16 +1,15 @@
-import React from "react";
-import ApiStore from "./api-store";
 import { observer } from "mobx-react-lite";
-import "./Styles/MovieCard.scss";
+import React from "react";
+import ApiStore from "../api-store";
 
-function MovieCard() {
+const LatestMovie = () => {
   const apiImgUrl = "https://image.tmdb.org/t/p/w500";
-  const results = ApiStore.movies.results;
+  const results = ApiStore.latest_movies.results;
 
   React.useEffect(() => {
-    ApiStore.fetchSearchData();
-  }, []);
-  console.log(results);
+    ApiStore.fetchLatestMovie();
+  });
+
   return (
     <div>
       <div className="wrapper">
@@ -26,6 +25,6 @@ function MovieCard() {
       </div>
     </div>
   );
-}
+};
 
-export default observer(MovieCard);
+export default observer(LatestMovie);
