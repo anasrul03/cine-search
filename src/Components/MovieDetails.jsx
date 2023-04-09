@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+// import MainpageList from "./MainpageList";
+
 
 function MovieDetails() {
   debugger;
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState([]);
   const { id } = useParams();
+
 
   useEffect(() => {
     const apiKey = "d62dc3f89ffd51183a0e62149a3931a4";
@@ -33,19 +36,24 @@ function MovieDetails() {
       }
     };
 
+    
     fetchMovie();
     fetchCredits();
+    
+
   }, [id]);
 
   return (
     <div className="movie_details">
-      <div className="movie__intro">
+      <div className="movie__header">
+
         <img
           className="movie__backdrop"
           src={`https://image.tmdb.org/t/p/original${
             movie ? movie.backdrop_path : ""
           }`}
         />
+        
       </div>
 
       <div className="movie__detail">
@@ -97,6 +105,10 @@ function MovieDetails() {
                   ))
                 : ""}
             </div>
+            <div>
+   
+
+          </div>
             
               {movie && movie.imdb_id && (
                 <a
@@ -114,8 +126,13 @@ function MovieDetails() {
           </div>
         </div>
       </div>
+      {/* <div className="bottom_list">
+      <MainpageList/>
+      </div> */}
+      
     </div>
   );
 }
 
 export default MovieDetails;
+
