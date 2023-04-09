@@ -1,19 +1,18 @@
 import React from 'react'
-import {useState} from "react";
+//import {useState} from "react";
 import SearchBar from './searchBar';
 import './Styles/header.scss';
-import SearchResults from './searchResults';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
-    const [results, setResults] = useState([]); 
+    //const [results, setResults] = useState([]); 
   return (
     <div className="header">
      <div className="logo">
       <h3>CineSearch</h3>
      </div>
      <div className="search">
-     <SearchBar setResults={setResults}></SearchBar>
-     <SearchResults results={results}/>
+     <SearchBar></SearchBar>
      </div>
      <div className="login-button">
       <button>Login</button>
