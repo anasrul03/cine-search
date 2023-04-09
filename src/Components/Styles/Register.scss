@@ -1,0 +1,52 @@
+$primary-color: #92bcea;
+$secondary-color: #171a21;
+$body-color: #171a21;
+$movie-title-color: white;
+$movie-year-color: white;
+$text-color: white;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    background-color: $body-color;
+    font-family: 'Monsterrat', sans-serif;
+}
+
+.register {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background-color: #dcdcdc;
+        padding: 30px;
+    }
+
+    &___textBox {
+        padding: 10px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    &__btn {
+        padding: 10px;
+        font-size: 18px;
+        margin-bottom: 10px;
+        border: none;
+        color: $text-color;
+        background-color: $body-color;
+    }
+
+    &__google {
+        background-color: #4285f4;
+    }
+
+    div {
+        margin-top: 7px;
+    }
+}
