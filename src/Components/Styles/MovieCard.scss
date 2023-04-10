@@ -98,6 +98,11 @@ h1 {
         -webkit-backdrop-filter: blur(13.5px);
         backdrop-filter: blur(13.5px);
         clip-path: ellipse(75%);
+        transform: translateY(-10%);
+      }
+
+      &:not(:hover) {
+        transform: translateY(10%);
       }
     }
 
