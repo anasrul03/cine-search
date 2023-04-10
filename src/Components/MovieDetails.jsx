@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function MovieDetails() {
-  debugger;
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState([]);
   const { id } = useParams();

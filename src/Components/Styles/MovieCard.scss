@@ -29,7 +29,10 @@ $movie-year-color: white;
 
 .no-underline {
   text-decoration: none; // Remove underline for active NavLink
-
+  color: white;
+  &::after {
+    color: white;
+  }
   &:hover {
     text-decoration: none; // Remove underline on hover as well
   }
