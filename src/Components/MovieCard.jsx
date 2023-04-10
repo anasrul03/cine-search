@@ -17,7 +17,6 @@ function MovieCard(props) {
               <div className="card" key={result.id}>
                 <img src={apiImgUrl + result.poster_path} alt="POSTER" />
                 <h2>{result.title}</h2>
-                {/* <h3>{result.release_date}</h3> */}
               </div>
             </NavLink>
           );
