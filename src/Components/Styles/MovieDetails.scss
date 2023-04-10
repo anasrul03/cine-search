@@ -5,122 +5,176 @@ $movie-title-color: white;
 $movie-year-color: white;
 
 
-.movie-details {
+.movie_details {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background-color: $secondary-color;
-   
-    
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    align-content: center;
   
-    .movie-details {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        border-radius: 25px;
-        
-      
-        .movie-title {
-          font-size: 32px;
-          font-weight: bold;
-          margin-bottom: 20px;
-        }
-      
-        .movie-image {
-          max-width: 400px;
-          margin-bottom: 20px;
-        }
-      
-        .movie-release-date {
-          font-size: 18px;
-          margin-bottom: 10px;
-          
-        }
-      
-        .movie-overview {
-          font-size: 16px;
-          line-height: 1.5;
-        }
-      }
-      
-    .movie-title {
-      font-size: 32px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-  
-    .movie-image {
-      max-width: 400px;
-      margin-bottom: 20px;
-    }
-  
-    .movie-release-date {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-  
-    .movie-overview {
-      font-size: 16px;
-      line-height: 1.5;
-    }
-     p{
-        color: $movie-year-color;
+}
 
-        &:hover {
-            color: $primary-color;
-          }
-     }
+.bottom_list{
+ width: 80%;
 
-     h1 {
-        color: $movie-title-color;
-        &:hover {
-            color: $primary-color;
-          }
-     }
-
-     img {
-      
-      
-      margin: 1rem;
-      max-height: 300px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
+}
+.movie__header {
+	width: 80%;
+	animation: fadeIn 5s;
+	-webkit-animation: fadeIn 5s;
+	-moz-animation: fadeIn 5s;
+	-o-animation: fadeIn 5s;
+	-ms-animation: fadeIn 5s;
   
-    table {
-      display: flex;
-      border-radius: 25px;
-      width: 50%;
-      margin-top: 1rem;
-      border-collapse: collapse;
-      border: 1px solid #ddd;
-      font-size: 1.2rem;
-      
-      background-color: $primary-color;
+}
 
-
-      th,
-      td {
-        padding: 0.8rem;
-        text-align: left;
-      }
-  
-      th {
-        width: 30%;
-        font-weight: bold;
-      }
-      tr {
-        width: 30%;
-        font-weight: bold;
-        font: $body-color;
-        
-      }
-    }
-  
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
   }
+  
+  @-moz-keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+  }
+.movie__backdrop {
+	width: 100%;
+	height: 500px;
+	object-fit: cover;
+	object-position: 0 35%;
+	
+}
 
+.movie__detail {
+	align-items: center;
+	width: 75%;
+	display: flex;
+	position: relative;
+	bottom: 225px;
+}
+.movie__detailLeft {
+	margin-right: 30px;
+}
+.movie__poster {
+	width: 300px;
+	border-radius: 10px;
+	box-shadow: #1b4479db 0px 22px 40px 6px;
+}
+.movie__detailRight {
+	color: white;
+	display: flex;
+	flex-direction: column;
+	height: 450px;
+	justify-content: space-between;
+}
+.movie__detailRightTop {
+	& > div {
+		text-shadow: 0px 0px 5px #000000;
+		margin-bottom: .5rem;
+		font-weight: 600;
+	}
+}
+.movie__name {
+	font-weight: 600;
+	font-size: 3rem;
+}
+
+.movie__genres {
+	margin: 1.25rem 0;
+}
+.movie__genre {
+	padding: .5rem;
+	border-radius: 20px;
+	margin-right: 1rem;
+	background-color: $primary-color;
+}
+.movie__detailRightBottom {
+	margin: 2rem 0;
+	flex: 0.8;
+}
+.synopsisText {
+	font-size: 1.5rem;
+	margin-bottom: 1.25rem;
+	font-weight: 600;
+	display: flex;
+	position: relative;
+	align-items: center;
+	& > div {
+		&:last-of-type {
+			margin-left: auto;
+		}
+	}
+}
+
+.synopsis{
+
+  margin-bottom: 1.25rem;
+  
+}
+.castList {
+	font-size: 1.5rem;
+	margin-bottom: 1.25rem;
+	font-weight: 600;
+	display: flex;
+	position: relative;
+	align-items: center;
+	& > div {
+		&:last-of-type {
+			margin-left: auto;
+		}
+	}
+}
+
+.movie_cast{
+  margin-bottom: 1.25rem;
+}
+
+.movie__links {
+	position: relative;
+	bottom: 120px;
+	display: flex;
+	justify-content: space-between;
+	width: 75%;
+}
+.movie__heading {
+	font-size: 2.2rem;
+}
+.movie__Button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.8rem 2rem;
+	border-radius: 20px;
+	cursor: pointer;
+	width: 150px;
+	color: black;
+	font-weight: bold;
+  margin-bottom: 1.25rem;
+}
+
+.movie__imdbButton {
+	background-color: #f3ce13;
+}
+.newTab {
+	margin-left: 1.4rem;
+}
 
 
 

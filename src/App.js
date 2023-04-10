@@ -1,10 +1,10 @@
 import "./App.css";
-import React, { useState } from "react";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-// import MovieSearch from "./Components/MovieSearch";
-import MovieDetails from "./Components/MovieDetails";
 import "./Components/Styles/MovieDetails.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LatestMovie, PopularMovie } from "./Components/Section";
+import MainpageList from "./Components/MainpageList";
+import NotFound from "./Components/NotFound";
+import MovieDetails from "./Components/MovieDetails";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import SearchResults from "./Components/SearchResults";
@@ -28,12 +28,14 @@ function App() {
         <Routes>
           <Route path="/search/:searchTerm" element={<SearchResults />} />
           <Route path="/" element={<Test />} />
-          {/* <Route path="/movie/:id" element={<MovieDetails />} /> */}
           <Route path="/movie/:id" element={<MovieDetails />} />
+          <Route path="/" element={<MainpageList />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </BrowserRouter>
     </div>
   );
 }
+
 export default App;
