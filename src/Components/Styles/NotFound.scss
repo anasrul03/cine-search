@@ -1,0 +1,51 @@
+
+// .notfound{
+
+//     position: relative;
+// 	display: flex;
+//     align-items: center;
+//     align-content: center;
+//     flex-direction: column;
+
+// }
+
+// .error{
+//     font-size: 100px;
+//     color: white;
+//     font-weight: 100;
+// }
+
+// .message{
+
+//     font-size: 30px;
+//     color: white;
+//     font-weight: 100;
+// }
+
+.notfound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+    .error {
+      font-size: 100px;
+      font-weight: 100;
+      margin-bottom: 2rem;
+      color: white;
+    }
+  
+    .message {
+      font-size: 30px;
+      margin-bottom: 2rem;
+      font-weight: 100px;
+      color: white;
+    }
+  
+    img {
+      max-width: 100%;
+    }
+  }
+
+
