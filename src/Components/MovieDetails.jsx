@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import MainpageList from "./MainpageList";
-
 
 function MovieDetails() {
   debugger;
@@ -9,12 +7,10 @@ function MovieDetails() {
   const [cast, setCast] = useState([]);
   const { id } = useParams();
 
-
   useEffect(() => {
     const apiKey = "d62dc3f89ffd51183a0e62149a3931a4";
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
     const creditsUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=en-US`;
-
 
     const fetchMovie = async () => {
       try {
@@ -36,24 +32,23 @@ function MovieDetails() {
       }
     };
 
-    
     fetchMovie();
     fetchCredits();
-    
-
   }, [id]);
+
+  if (!movie) {
+    return <h1> Movie Not Found </h1>;
+  }
 
   return (
     <div className="movie_details">
       <div className="movie__header">
-
         <img
           className="movie__backdrop"
           src={`https://image.tmdb.org/t/p/original${
             movie ? movie.backdrop_path : ""
           }`}
         />
-        
       </div>
 
       <div className="movie__detail">
@@ -74,7 +69,8 @@ function MovieDetails() {
             </div>
             <div className="movie__tagline">{movie ? movie.tagline : ""}</div>
             <div className="movie__rating">
-              {movie.vote_average ? movie.vote_average.toFixed(1) : '-' } <i class="fas fa-star" /> /10
+              {movie.vote_average ? movie.vote_average.toFixed(1) : "-"}{" "}
+              <i class="fas fa-star" /> /10
             </div>
             <div className="movie__runtime">
               {movie ? movie.runtime + " mins" : ""}
@@ -105,34 +101,26 @@ function MovieDetails() {
                   ))
                 : ""}
             </div>
-            <div>
-   
+            <div></div>
 
-          </div>
-            
-              {movie && movie.imdb_id && (
-                <a
-                  href={"https://www.imdb.com/title/" + movie.imdb_id}
-                  target="_blank"
-                  style={{ textDecoration: "none" }}
-                >
-                  <p>
-                    <span className="movie__imdbButton movie__Button">
-                      IMDb<i className="newTab fas fa-external-link-alt"></i>
-                    </span>
-                  </p>
-                </a>
-              )}
+            {movie && movie.imdb_id && (
+              <a
+                href={"https://www.imdb.com/title/" + movie.imdb_id}
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                <p>
+                  <span className="movie__imdbButton movie__Button">
+                    IMDb<i className="newTab fas fa-external-link-alt"></i>
+                  </span>
+                </p>
+              </a>
+            )}
           </div>
         </div>
       </div>
-      {/* <div className="bottom_list">
-      <MainpageList/>
-      </div> */}
-      
     </div>
   );
 }
 
 export default MovieDetails;
-
