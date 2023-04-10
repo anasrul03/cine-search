@@ -1,6 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
 import ApiStore from "../api-store";
+import { NavLink } from "react-router-dom";
 
 const TrendingMovie = () => {
   const apiImgUrl = "https://image.tmdb.org/t/p/w500";
@@ -18,10 +19,12 @@ const TrendingMovie = () => {
         {results &&
           results?.map((result) => {
             return (
-              <div className="card" key={result.id}>
-                <img src={apiImgUrl + result.poster_path} alt="POSTER" />
-                <h2>{result.title}</h2>
-              </div>
+              <NavLink className="no-underline" to={`/movie/${result.id}`}>
+                <div className="card" key={result.id}>
+                  <img src={apiImgUrl + result.poster_path} alt="POSTER" />
+                  <h2>{result.title}</h2>
+                </div>
+              </NavLink>
             );
           })}
       </div>

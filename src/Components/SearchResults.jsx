@@ -16,7 +16,10 @@ const SearchResults = () => {
   let equalTo = "2023";
 
   useEffect(() => {
+<<<<<<< HEAD
     debugger;
+=======
+>>>>>>> main
     axios
       .get(
         `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`
@@ -30,7 +33,10 @@ const SearchResults = () => {
           console.log(res.data);
         },
         (data) => {
+<<<<<<< HEAD
           debugger;
+=======
+>>>>>>> main
           setIsLoaded(true);
           setError(data);
           console.log("data error");

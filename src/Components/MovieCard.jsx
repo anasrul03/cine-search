@@ -13,11 +13,6 @@ function MovieCard(props) {
   // }, []);
   // console.log(results);
 
-  // const test = (id) => {
-  //   debugger;
-  //   console.log("Id is getting");
-  // };
-
   return (
     <div>
       <div className="wrapper">
