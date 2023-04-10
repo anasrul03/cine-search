@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import SearchResults from "./SearchResults";
+import MovieCard from "./MovieCard";
+import ApiStore from "./api-store";
+import RelatedMovie from "./Section/RelatedMovie";
 
 function MovieDetails() {
+  // const result = search.getMovieTitle.results;
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState([]);
   const { id } = useParams();
@@ -33,6 +38,7 @@ function MovieDetails() {
 
     fetchMovie();
     fetchCredits();
+    // ApiStore.fetchRelatedMovie();
   }, [id]);
 
   if (!movie) {
@@ -117,6 +123,10 @@ function MovieDetails() {
             )}
           </div>
         </div>
+      </div>
+      <div className="bottomlist">
+        {/* <SearchResults  /> */}
+        {/* <RelatedMovie movieTitle={related} /> */}
       </div>
     </div>
   );

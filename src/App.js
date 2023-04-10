@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
+import MovieDetails from "./Components/MovieDetails";
 import "./Components/Styles/MovieDetails.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainpageList from "./Components/MainpageList";
 import NotFound from "./Components/NotFound";
-import MovieDetails from "./Components/MovieDetails";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import SearchResults from "./Components/SearchResults";

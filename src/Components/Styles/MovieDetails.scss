@@ -98,9 +98,11 @@ $movie-year-color: white;
 .movie__detailRight {
   color: white;
   display: flex;
+  position: relative;
   flex-direction: column;
   height: 450px;
   justify-content: space-between;
+  text-align: justify;
 }
 .movie__detailRightTop {
   & > div {
@@ -190,4 +192,9 @@ $movie-year-color: white;
 }
 .newTab {
   margin-left: 1.4rem;
+}
+
+.bottomlist {
+  position: relative;
+  display: flex;
 }
