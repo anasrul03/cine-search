@@ -16,10 +16,6 @@ $movie-year-color: white;
   
 }
 
-.bottom_list{
- width: 80%;
-
-}
 .movie__header {
 	width: 80%;
 	animation: fadeIn 5s;
@@ -80,6 +76,7 @@ $movie-year-color: white;
 .movie__detailRight {
 	color: white;
 	display: flex;
+	position: relative;
 	flex-direction: column;
 	height: 450px;
 	justify-content: space-between;
@@ -166,7 +163,7 @@ $movie-year-color: white;
 	width: 150px;
 	color: black;
 	font-weight: bold;
-  margin-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .movie__imdbButton {
@@ -174,6 +171,13 @@ $movie-year-color: white;
 }
 .newTab {
 	margin-left: 1.4rem;
+}
+
+.bottomlist{
+ 
+	position: relative;
+	display: flex;
+
 }
 
 

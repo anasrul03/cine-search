@@ -1,9 +1,14 @@
-import React, { useState } from "react";
 
+import React, { useState } from "react";
+import {observable} from "mobx";
 import { useNavigate } from "react-router";
+import ApiStore from "./api-store";
+import { useObservable } from "mobx-react-lite";
+
 
 function MovieSearch() {
   const [searchTerm, setSearchTerm] = useState("");
+  // const storeSearch = useObservable({keep: "", setKeep(value){this.keep = value}});
   const [results, setResults] = useState([]);
   const navigate = useNavigate();
   const handleChange = (event) => {
@@ -12,7 +17,9 @@ function MovieSearch() {
 
   const handleSubmit = async (event) => {
     // event.preventDefault();
+    // ApiStore.fetchRelatedMovie(searchTerm);
     navigate(`/search/${searchTerm}`);
+    console.log(searchTerm);
   };
   // const apiKey = 'd62dc3f89ffd51183a0e62149a3931a4';
   // const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`;
