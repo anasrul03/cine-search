@@ -1,10 +1,8 @@
-
 import React, { useState } from "react";
-import {observable} from "mobx";
+import { observable } from "mobx";
 import { useNavigate } from "react-router";
 import ApiStore from "./api-store";
 import { useObservable } from "mobx-react-lite";
-
 
 function MovieSearch() {
   const [searchTerm, setSearchTerm] = useState("");

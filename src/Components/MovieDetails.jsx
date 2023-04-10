@@ -9,7 +9,7 @@ function MovieDetails() {
   // const result = search.getMovieTitle.results;
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState([]);
-  const { id, related } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     const apiKey = "d62dc3f89ffd51183a0e62149a3931a4";
@@ -126,7 +126,7 @@ function MovieDetails() {
       </div>
       <div className="bottomlist">
         {/* <SearchResults  /> */}
-        <RelatedMovie movieTitle={related} />
+        {/* <RelatedMovie movieTitle={related} /> */}
       </div>
     </div>
   );
