@@ -8,7 +8,6 @@ import MovieDetails from "./Components/MovieDetails";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import SearchResults from "./Components/SearchResults";
-import MovieCard from "./Components/MovieCard";
 import TrendingMovie from "./Components/Section/TrendingMovie";
 import LatestMovie from "./Components/Section/LatestMovie";
 
