@@ -18,6 +18,7 @@ export class ApiStoreImpl {
       isLoaded: observable,
       movies: observable,
       trending_movie: observable,
+      latest_movies: observable,
       fetchSearchData: action.bound,
       fetchTrendingMovie: action.bound,
       fetchLatestMovie: action.bound,
@@ -75,7 +76,7 @@ export class ApiStoreImpl {
           this.latest_movies = res.data;
           console.log("data is available");
           console.log(res.data);
-          console.log("Trending Movie has been fetched");
+          console.log("Latest Movie has been fetched");
         },
         (error) => {
           this.isLoaded = true;
