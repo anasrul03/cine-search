@@ -1,17 +1,22 @@
+import React from "react";
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+// import MovieSearch from "./Components/MovieSearch";
 import MovieDetails from "./Components/MovieDetails";
 import "./Components/Styles/MovieDetails.scss";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainpageList from "./Components/MainpageList";
-import NotFound from "./Components/NotFound";
+
 
 function App() {
   return (
+    
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<MainpageList />} />
+        {/* <Route path="/" element={<MovieSearch />} /> */}
+        <Route path="/" element={<MainpageList />}/>
         <Route path="/movie/:id" element={<MovieDetails />} />
-        <Route path="*" element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
   );
