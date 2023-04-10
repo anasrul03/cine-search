@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import MainpageList from "./Components/MainpageList";
 import Register from "./Components/Register";
 import Login from "./Components/Login";
-import Reset from "./Components/Reset";
 import NotFound from "./Components/NotFound";
 import MovieDetails from "./Components/MovieDetails";
 import Header from "./Components/header";
@@ -65,7 +64,6 @@ function App() {
           <Route path="/" element={<Test />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/reset" element={<Reset />} />
           <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
