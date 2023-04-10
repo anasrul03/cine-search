@@ -1,0 +1,31 @@
+$primary-color: #92bcea;
+$secondary-color: #171a21;
+$body-color: #171a21;
+$movie-title-color: white;
+$movie-year-color: white;
+$text-color: white;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    background-color: $text-color;
+    font-family: 'Monsterrat', sans-serif;
+}
+
+.profile {
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid #dcdcdc;
+    padding: 20px;
+    text-align: center;
+
+    p {
+        text-align: left;
+    }
+    
+    & > span {
+        color: blue;
+        margin-top:  30px;
+        cursor: pointer;
+    }
+}
