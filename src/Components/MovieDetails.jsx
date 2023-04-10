@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import SearchResults from "./SearchResults";
-import MovieCard from "./MovieCard";
-import ApiStore from "./api-store";
-import RelatedMovie from "./Section/RelatedMovie";
 
 function MovieDetails() {
   // const result = search.getMovieTitle.results;
@@ -124,10 +120,7 @@ function MovieDetails() {
           </div>
         </div>
       </div>
-      <div className="bottomlist">
-        {/* <SearchResults  /> */}
-        {/* <RelatedMovie movieTitle={related} /> */}
-      </div>
+      <div className="bottomlist"></div>
     </div>
   );
 }

@@ -20,91 +20,37 @@ export class ApiStoreImpl {
       trending_movie: observable,
       latest_movies: observable,
       related_movie: observable,
-      fetchSearchData: action.bound,
-      fetchTrendingMovie: action.bound,
-      fetchLatestMovie: action.bound,
+      fetchData: action.bound,
     });
   }
-  fetchSearchData = () => {
-    axios
-      .get(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}`)
-      .then(
-        (res) => {
-          this.isLoaded = true;
-          this.movies = res.data;
-          console.log("data is available");
-          console.log(res.data);
-        },
-        (error) => {
-          this.isLoaded = true;
-          this.error = error;
-          console.log("data error");
-        }
-      );
-  };
 
-  fetchTrendingMovie = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${this.apiKey}&language=en-US&page=1`
-      )
-      .then(
-        (res) => {
-          this.isLoaded = true;
-          this.trending_movie = res.data;
-          console.log("data is available");
-          console.log(res.data);
-          console.log("Trending Movie has been fetched");
-        },
-        (error) => {
-          this.isLoaded = true;
-          this.error = error;
-          console.log("data error");
+  fetchData = (url) => {
+    axios.get(url).then(
+      (res) => {
+        this.isLoaded = true;
+        switch (url) {
+          case `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}`:
+            this.movies = res.data;
+            console.log("Movies data is available");
+            break;
+          case `https://api.themoviedb.org/3/movie/popular?api_key=${this.apiKey}&page=1`:
+            this.trending_movie = res.data;
+            console.log("Trending Movie data is available");
+            break;
+          case `https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}&page=5`:
+            this.latest_movies = res.data;
+            console.log("Latest Movie data is available");
+            break;
+          default:
+            console.log("Unknown URL");
         }
-      );
-  };
-
-  fetchLatestMovie = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/now_playing?api_key=${this.apiKey}`
-      )
-      .then(
-        (res) => {
-          this.isLoaded = true;
-          this.latest_movies = res.data;
-          console.log("data is available");
-          console.log(res.data);
-          console.log("Latest Movie has been fetched");
-        },
-        (error) => {
-          this.isLoaded = true;
-          this.error = error;
-          console.log("data error");
-        }
-      );
-  };
-
-  fetchRelatedMovie = (searchKeyword) => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${searchKeyword}`
-      )
-      .then(
-        (res) => {
-          this.isLoaded = true;
-          this.related_movie = res.data;
-          console.log("data is available");
-          console.log(res.data);
-          console.log("Latest Movie has been fetched");
-        },
-        (error) => {
-          this.isLoaded = true;
-          this.error = error;
-          console.log("data error");
-        }
-      );
- 
+      },
+      (error) => {
+        this.isLoaded = true;
+        this.error = error;
+        console.log("Error fetching data");
+      }
+    );
   };
 }
 
