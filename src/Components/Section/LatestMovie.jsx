@@ -8,11 +8,11 @@ const LatestMovie = () => {
   const results = ApiStore.latest_movies.results;
 
   React.useEffect(() => {
-    ApiStore.fetchLatestMovie();
-  },[]);
-    console.log(results);
-
-  
+    ApiStore.fetchData(
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${ApiStore.apiKey}&page=5`
+    );
+  }, []);
+  console.log(results);
 
   return (
     <div>

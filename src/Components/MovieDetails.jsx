@@ -126,9 +126,7 @@ function MovieDetails() {
         </div>
         
       </div>
-      
-     
-
+   
     </div>
       
       

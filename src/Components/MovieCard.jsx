@@ -2,7 +2,7 @@ import React from "react";
 import { observer } from "mobx-react-lite";
 import "./Styles/MovieCard.scss";
 import { NavLink } from "react-router-dom";
-import ApiStore from "./api-store";
+// import ApiStore from "./api-store";
 
 function MovieCard(props) {
   const apiImgUrl = "https://image.tmdb.org/t/p/w500";
