@@ -8,7 +8,9 @@ const TrendingMovie = () => {
   const results = ApiStore.trending_movie.results;
 
   React.useEffect(() => {
-    ApiStore.fetchTrendingMovie();
+    ApiStore.fetchData(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${ApiStore.apiKey}&page=1`
+    );
   }, []);
 
   console.log(results);
