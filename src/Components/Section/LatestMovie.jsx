@@ -10,7 +10,9 @@ const LatestMovie = () => {
   React.useEffect(() => {
     ApiStore.fetchLatestMovie();
   });
-  console.log(results);
+    console.log(results);
+
+  
 
   return (
     <div>
