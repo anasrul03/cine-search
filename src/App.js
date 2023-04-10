@@ -1,13 +1,16 @@
+import React from "react";
 import "./App.css";
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 // import MovieSearch from "./Components/MovieSearch";
 import MovieDetails from "./Components/MovieDetails";
 import "./Components/Styles/MovieDetails.scss";
-import { LatestMovie, PopularMovie } from "./Components/Section";
 import Header from "./Components/header";
 import Footer from "./Components/footer";
 import SearchResults from "./Components/SearchResults";
+import MovieCard from "./Components/MovieCard";
+import TrendingMovie from "./Components/Section/TrendingMovie";
+import LatestMovie from "./Components/Section/LatestMovie";
 
 const Test = () => {
   return (
@@ -15,7 +18,7 @@ const Test = () => {
       <h1>Now Showing</h1>
       <LatestMovie />
       <h1>Trending Now</h1>
-      <PopularMovie />
+      <TrendingMovie />
     </div>
   );
 };

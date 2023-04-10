@@ -7,47 +7,49 @@ import { NavLink } from "react-router-dom";
 import "./Styles/MovieCard.scss";
 
 const SearchResults = () => {
-    //debugger
-    const {searchTerm} = useParams();
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [movies, setMovies] = useState([]);
-    const apiKey = "d62dc3f89ffd51183a0e62149a3931a4";
-    let equalTo = "2023";
-    
-    useEffect(() => {
-        debugger
-      axios
-        .get(
-          `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`
-        )
-        .then(
-          (res) => {
-            debugger
-            setIsLoaded(true);
-            setMovies(res.data);
-            console.log("data is available");
-            console.log(res.data);
-          },
-          (data) => {
-            debugger
-            setIsLoaded(true);
-            setError(data);
-            console.log("data error");
-          }
-        );
-    }, []);
-  
-    return (
-      <div>
-        {/* <h1>Latest Movie</h1> */}
-      
-        <div className="list-button">
-          <MovieCard getmMovies={movies} />
-          <NavLink to="/"><button >&laquo; Back</button></NavLink>
-        </div>
+  //debugger
+  const { searchTerm } = useParams();
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [movies, setMovies] = useState([]);
+  const apiKey = "d62dc3f89ffd51183a0e62149a3931a4";
+  let equalTo = "2023";
+
+  useEffect(() => {
+    debugger;
+    axios
+      .get(
+        `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`
+      )
+      .then(
+        (res) => {
+          debugger;
+          setIsLoaded(true);
+          setMovies(res.data);
+          console.log("data is available");
+          console.log(res.data);
+        },
+        (data) => {
+          debugger;
+          setIsLoaded(true);
+          setError(data);
+          console.log("data error");
+        }
+      );
+  }, []);
+
+  return (
+    <div>
+      {/* <h1>Latest Movie</h1> */}
+
+      <div className="list-button">
+        <MovieCard getmMovies={movies} />
+        <NavLink to="/">
+          <button>&laquo; Back</button>
+        </NavLink>
       </div>
-    );
-}
+    </div>
+  );
+};
 
 export default SearchResults;

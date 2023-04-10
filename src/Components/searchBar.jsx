@@ -3,7 +3,7 @@
 
 // const SearchBar = ({setResults}) =>{
 //     const [searchInput, setSearchInput] = useState("");
-   
+
 //     //function to fetch data from API
 //     const fetchData =(value)=>{
 //       fetch("https://api.themoviedb.org/3/movie/550?api_key=d62dc3f89ffd51183a0e62149a3931a4=${searchInput}")
@@ -12,9 +12,9 @@
 
 //         const results=json.filter((movie)=>{
 //             return (
-//                value && 
-//                movie && 
-//                movie.name && 
+//                value &&
+//                movie &&
+//                movie.name &&
 //                movie.name.toLowerCase().includes(value)
 //             );
 
@@ -67,12 +67,12 @@
 
 // export default SearchBar;
 
-import React, { useState } from 'react';
-  
-import { useNavigate } from 'react-router';
+import React, { useState } from "react";
+
+import { useNavigate } from "react-router";
 
 function MovieSearch() {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
   const navigate = useNavigate();
   const handleChange = (event) => {
@@ -80,31 +80,34 @@ function MovieSearch() {
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    navigate(`/search/${searchTerm}`)
- 
-};
-    // const apiKey = 'd62dc3f89ffd51183a0e62149a3931a4';
-    // const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`;
+    // event.preventDefault();
+    navigate(`/search/${searchTerm}`);
+  };
+  // const apiKey = 'd62dc3f89ffd51183a0e62149a3931a4';
+  // const url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`;
 
-    // try {
-    //   const response = await fetch(url);
-    //   const json = await response.json();
-    //   setResults(json.results);
-    // } catch (error) {
-    //   console.error(error);
-    // }
-   
-return (
+  // try {
+  //   const response = await fetch(url);
+  //   const json = await response.json();
+  //   setResults(json.results);
+  // } catch (error) {
+  //   console.error(error);
+  // }
+
+  return (
     <div className="input-search">
       <form onSubmit={handleSubmit}>
-        <input type="text" value={searchTerm} onChange={handleChange} placeholder='Search movies here...' />
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleChange}
+          placeholder="Search movies here..."
+        />
         <button type="submit">Search</button>
       </form>
-   {/* {results.length > 0 && <MovieCard2 results={results}/>} */}
+      {/* {results.length > 0 && <MovieCard2 results={results}/>} */}
     </div>
-)
+  );
 }
 
 export default MovieSearch;
-
