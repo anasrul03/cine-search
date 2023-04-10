@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import SearchResults from "./SearchResults";
-import MovieCard from "./MovieCard";
-import ApiStore from "./api-store";
-import RelatedMovie from "./Section/RelatedMovie";
+import LatestMovie from "./Section/LatestMovie";
 
 function MovieDetails() {
   // const result = search.getMovieTitle.results;
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState([]);
-  const { id, related } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     const apiKey = "d62dc3f89ffd51183a0e62149a3931a4";
@@ -46,6 +43,7 @@ function MovieDetails() {
   }
 
   return (
+    
     <div className="movie_details">
       <div className="movie__header">
         <img
@@ -106,7 +104,6 @@ function MovieDetails() {
                   ))
                 : ""}
             </div>
-            <div></div>
 
             {movie && movie.imdb_id && (
               <a
@@ -121,14 +118,20 @@ function MovieDetails() {
                 </p>
               </a>
             )}
+
+           <div className="bottomlist">
+            <LatestMovie/>
+           </div>
           </div>
         </div>
+        
       </div>
-      <div className="bottomlist">
-        {/* <SearchResults  /> */}
-        <RelatedMovie movieTitle={related} />
-      </div>
+      
+     
+
     </div>
+      
+      
   );
 }
 

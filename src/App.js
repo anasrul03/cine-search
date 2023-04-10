@@ -30,11 +30,13 @@ function App() {
         <Routes>
           <Route path="/search/:searchTerm" element={<SearchResults />} />
           <Route path="/" element={<Test />} />
-          <Route path="/movie/:id/:related" element={<MovieDetails/>} />
+          <Route path="/movie/:id" element={<MovieDetails/>} />
           <Route path="/" element={<MainpageList />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+      <footer>
         <Footer />
+      </footer>
       </BrowserRouter>
     </div>
   );

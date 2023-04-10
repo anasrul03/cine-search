@@ -4,15 +4,11 @@ import "./Styles/MovieCard.scss";
 import { NavLink } from "react-router-dom";
 import ApiStore from "./api-store";
 
-function MovieCard({getmMovies, getSearch}) {
+function MovieCard(props) {
   const apiImgUrl = "https://image.tmdb.org/t/p/w500";
-  const results = getmMovies.results;
+  const results = props.getmMovies.results;
 
-  // React.useEffect(() => {
-  //   ApiStore.fetchRelatedMovie(getSearch);
-  //   console.log(ApiStore.related_movie);
-  // }, []);
-  // console.log(results);
+  console.log(results);
 
   return (
     <div>
@@ -20,7 +16,7 @@ function MovieCard({getmMovies, getSearch}) {
         {results && results?.map((result) => {
           return (
             result.poster_path &&
-            <NavLink to={`/movie/${result.id}/${getSearch}`}>
+            <NavLink to={`/movie/${result.id}/`}>
               <div className="card" key={result.id}>
                 <img src={apiImgUrl + result.poster_path} alt="POSTER" />
                 <h2>{result.title}</h2>
@@ -33,4 +29,4 @@ function MovieCard({getmMovies, getSearch}) {
   );
 }
 
-export default observer(MovieCard);
+export default MovieCard;
