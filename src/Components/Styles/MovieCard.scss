@@ -4,14 +4,6 @@ $body-color: #171a21;
 $movie-title-color: white;
 $movie-year-color: white;
 
-img {
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  user-drag: none;
-}
-
 // animation
 @keyframes fadeInOut {
   0% {
@@ -35,6 +27,17 @@ img {
   height: 0;
 }
 
+.no-underline {
+  text-decoration: none; // Remove underline for active NavLink
+  color: white;
+  &::after {
+    color: white;
+  }
+  &:hover {
+    text-decoration: none; // Remove underline on hover as well
+  }
+}
+
 body {
   background-color: $body-color;
 }
@@ -48,17 +51,6 @@ h1 {
   font-family: sans-serif;
 }
 
-.backdrop {
-  // margin-bottom: 1600px;
-  height: 50vh;
-  width: 100%;
-  position: absolute;
-  background-size: auto;
-  background-repeat: no-repeat;
-  background-position: top;
-  // margin-bottom: 1000px;
-}
-
 .wrapper {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -66,11 +58,11 @@ h1 {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  animation: fadeInOut 0.2s linear;
+  animation: fadeInOut 1s linear;
   flex-wrap: wrap;
   align-items: center; // vertically center align items
   justify-content: center; // horizontally center align items
-  width: 200vh;
+  width: 240vh;
   height: 53vh;
 
   .card {
@@ -114,6 +106,8 @@ h1 {
       font-size: 20px;
       padding: 10px 20px;
       margin: 15px 0px 5px 0px;
+      text-decoration: none; // Remove underline for active NavLink
+
       // word-wrap: break-word;
       // word-break: break-all;
       // text-overflow: ellipsis;
@@ -127,4 +121,27 @@ h1 {
       font-size: 15px;
     }
   }
+}
+.list-button {
+  display: flex;
+  //justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+button {
+  background-color: #0a66c2;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #144d85;
 }

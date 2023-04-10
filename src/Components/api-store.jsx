@@ -26,9 +26,7 @@ export class ApiStoreImpl {
   }
   fetchSearchData = () => {
     axios
-      .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=marvel`
-      )
+      .get(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}`)
       .then(
         (res) => {
           this.isLoaded = true;
