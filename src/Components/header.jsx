@@ -12,6 +12,9 @@ function Header() {
         <NavLink className={"no-underline"} to="/">
           <h3>CineSearch</h3>
         </NavLink>
+        <NavLink className={"no-underline"} to="/AboutUs">
+          <h3>Our Team</h3>
+        </NavLink>
       </div>
       <div className="search">
         <SearchBar></SearchBar>
