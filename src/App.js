@@ -33,6 +33,9 @@ function App() {
         <Routes>
           <Route path="/search/:searchTerm" element={<SearchResults />} />
           <Route path="/" element={<Test />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/reset" element={<Reset />} />
           <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="/" element={<MainpageList />} />
           <Route path="*" element={<NotFound />} />
