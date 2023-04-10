@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+// import {useState} from "react";
+// //import "./index.css";
 
-<<<<<<< HEAD
 // const SearchBar = ({setResults}) =>{
 //     const [searchInput, setSearchInput] = useState("");
 
@@ -69,8 +69,6 @@ import React, { useState } from "react";
 
 import React, { useState } from "react";
 
-=======
->>>>>>> main
 import { useNavigate } from "react-router";
 
 function MovieSearch() {

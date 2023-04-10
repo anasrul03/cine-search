@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom";
 import "./Styles/MovieCard.scss";
 
 const SearchResults = () => {
-  //debugger
   const { searchTerm } = useParams();
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -16,27 +15,18 @@ const SearchResults = () => {
   let equalTo = "2023";
 
   useEffect(() => {
-<<<<<<< HEAD
-    debugger;
-=======
->>>>>>> main
     axios
       .get(
         `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchTerm}`
       )
       .then(
         (res) => {
-          debugger;
           setIsLoaded(true);
           setMovies(res.data);
           console.log("data is available");
           console.log(res.data);
         },
         (data) => {
-<<<<<<< HEAD
-          debugger;
-=======
->>>>>>> main
           setIsLoaded(true);
           setError(data);
           console.log("data error");
