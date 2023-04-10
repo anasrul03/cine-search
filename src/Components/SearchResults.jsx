@@ -7,7 +7,6 @@ import { NavLink } from "react-router-dom";
 import "./Styles/MovieCard.scss";
 
 const SearchResults = () => {
-  //debugger
   const { searchTerm } = useParams();
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -22,7 +21,6 @@ const SearchResults = () => {
       )
       .then(
         (res) => {
-          debugger;
           setIsLoaded(true);
           setMovies(res.data);
           console.log("data is available");
@@ -41,7 +39,7 @@ const SearchResults = () => {
       {/* <h1>Latest Movie</h1> */}
 
       <div className="list-button">
-        <MovieCard getmMovies={movies} />
+        <MovieCard getmMovies={movies} getSearch={searchTerm} />
         <NavLink to="/">
           <button>&laquo; Back</button>
         </NavLink>

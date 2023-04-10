@@ -8,7 +8,7 @@ export class ApiStoreImpl {
   movies = [];
   latest_movies = [];
   trending_movie = [];
-  // carousel_movies = [];
+  related_movie = "";
   apiKey = "d62dc3f89ffd51183a0e62149a3931a4";
 
   constructor() {
@@ -19,6 +19,7 @@ export class ApiStoreImpl {
       movies: observable,
       trending_movie: observable,
       latest_movies: observable,
+      related_movie: observable,
       fetchSearchData: action.bound,
       fetchTrendingMovie: action.bound,
       fetchLatestMovie: action.bound,
@@ -82,6 +83,28 @@ export class ApiStoreImpl {
           console.log("data error");
         }
       );
+  };
+
+  fetchRelatedMovie = (searchKeyword) => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${searchKeyword}`
+      )
+      .then(
+        (res) => {
+          this.isLoaded = true;
+          this.related_movie = res.data;
+          console.log("data is available");
+          console.log(res.data);
+          console.log("Latest Movie has been fetched");
+        },
+        (error) => {
+          this.isLoaded = true;
+          this.error = error;
+          console.log("data error");
+        }
+      );
+ 
   };
 }
 

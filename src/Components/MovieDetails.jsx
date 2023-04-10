@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import SearchResults from "./SearchResults";
+import MovieCard from "./MovieCard";
+import ApiStore from "./api-store";
+import RelatedMovie from "./Section/RelatedMovie";
 
 function MovieDetails() {
-  debugger
+  // const result = search.getMovieTitle.results;
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState([]);
-  const { id } = useParams();
+  const { id, related } = useParams();
 
   useEffect(() => {
     const apiKey = "d62dc3f89ffd51183a0e62149a3931a4";
@@ -34,6 +38,7 @@ function MovieDetails() {
 
     fetchMovie();
     fetchCredits();
+    // ApiStore.fetchRelatedMovie();
   }, [id]);
 
   if (!movie) {
@@ -118,6 +123,10 @@ function MovieDetails() {
             )}
           </div>
         </div>
+      </div>
+      <div className="bottomlist">
+        {/* <SearchResults  /> */}
+        <RelatedMovie movieTitle={related} />
       </div>
     </div>
   );
