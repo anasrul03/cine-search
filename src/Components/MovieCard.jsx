@@ -18,12 +18,14 @@ function MovieCard(props) {
       <div className="wrapper">
         {results?.map((result) => {
           return (
-            <NavLink className="no-underline" to={`/movie/${result.id}`}>
-              <div className="card" key={result.id}>
-                <img src={apiImgUrl + result.poster_path} alt="POSTER" />
-                <h2>{result.title}</h2>
-              </div>
-            </NavLink>
+            result.poster_path && (
+              <NavLink className="no-underline" to={`/movie/${result.id}`}>
+                <div className="card" key={result.id}>
+                  <img src={apiImgUrl + result.poster_path} alt="POSTER" />
+                  <h2>{result.title}</h2>
+                </div>
+              </NavLink>
+            )
           );
         })}
       </div>
