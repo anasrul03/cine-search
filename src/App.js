@@ -17,7 +17,6 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./Components/Firebase";
 import PrivateRoute from "./Components/PrivateRoute";
 import Profile from "./Components/Profile";
-import VerifyEmail from "./Components/VerifyEmail";
 
 
 const Test = () => {
@@ -59,9 +58,9 @@ function App() {
             ? <Register/>
             : <Navigate to='/register' replace/>
           } />
-          <Route path='/verify-email' element={<VerifyEmail/>} /> 
+          <Route path="/" element={<Register />} />
           <Route path="/search/:searchTerm" element={<SearchResults />} />
-          <Route path="/" element={<Test />} />
+          <Route path="/movielist" element={<Test />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/movie/:id" element={<MovieDetails />} />

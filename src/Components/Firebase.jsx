@@ -52,7 +52,7 @@ const signInWithGoogle = async () => {
     }
     catch (err) {
         console.error(err);
-        alert(err.message);
+        // alert(err.message);
     }
 }
 const logInWithEmailAndPassword = async (email, password) => {
@@ -61,7 +61,7 @@ const logInWithEmailAndPassword = async (email, password) => {
     }
     catch (err) {
         console.error(err);
-        alert(err.message);
+        // alert(err.message);
     }
 };
 
@@ -78,7 +78,7 @@ const registerWithEmailAndPassword = async (fname, email, password) => {
     }
     catch (err) {
         console.error(err);
-        alert(err.message);
+        // alert(err.message);
     }
 };
 

@@ -10,6 +10,7 @@ $text-color: white;
 body {
     background-color: $body-color;
     font-family: 'Monsterrat', sans-serif;
+    height: 100vh;
 }
 
 // .login {
@@ -51,6 +52,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    // height: 100vh;
+
+    p {
+        color: $text-color;
+    }
 }
 
 .auth {
@@ -61,7 +67,7 @@ body {
     text-align: center;
 
     h2 {
-        color: $body-color;
+        color: $text-color;
     }
 
     &__success {
@@ -101,5 +107,9 @@ body {
             height: 40px;
             font-size: 16px;
             padding: 0 10px;
+        }
+
+        p {
+            color: $text-color;
         }
 }

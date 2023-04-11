@@ -16,19 +16,13 @@ function Header() {
   return (
     <div className="header">
       <div className="logo">
-        <NavLink className={"no-underline"} to="/">
+        <NavLink className={"no-underline"} to="/movielist">
           <h3>CineSearch</h3>
         </NavLink>
       </div>
       <div className="search">
         <SearchBar></SearchBar>
       </div>
-      {/* <div className="login-button">
-        <button onClick={navigateToLogin}>Login</button>
-      </div> */}
-      {/* <Routes>
-        <Route path="/login" element={<Login />}></Route>
-      </Routes> */}
     </div>
   );
 }
