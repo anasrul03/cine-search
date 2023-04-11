@@ -82,7 +82,7 @@ function MovieDetails() {
             <div className="movie__tagline">{movie ? movie.tagline : ""}</div>
             <div className="movie__rating">
               {movie.vote_average ? movie.vote_average.toFixed(1) : "-"}{" "}
-              <i class="fas fa-star" /> /10
+              <i className="fas fa-star" /> /10
             </div>
             <div className="movie__runtime">
               {movie ? movie.runtime + " mins" : ""}
