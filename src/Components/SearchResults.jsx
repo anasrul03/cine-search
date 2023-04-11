@@ -31,7 +31,7 @@ const SearchResults = () => {
           console.log("data error");
         }
       );
-  }, []);
+  }, [searchTerm]);
 
   return (
     <div>
