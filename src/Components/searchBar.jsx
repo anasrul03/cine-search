@@ -14,7 +14,7 @@ function MovieSearch() {
   };
 
   const handleSubmit = async (event) => {
-     event.preventDefault();
+    event.preventDefault();
     // ApiStore.fetchRelatedMovie(searchTerm);
     navigate(`/search/${searchTerm}`);
     console.log(searchTerm);
@@ -47,4 +47,3 @@ function MovieSearch() {
 }
 
 export default MovieSearch;
-

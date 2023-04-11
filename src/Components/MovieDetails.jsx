@@ -127,16 +127,15 @@ function MovieDetails() {
                 </p>
               </a>
             )}
-            <h1>Latest Movies</h1>
-            <div className="bottomlist">
-              <LatestMovie />
-            </div>
           </div>
         </div>
+      </div>
+      <h1>Check out! Latest Movies</h1>
+      <div className="bottomlist">
+        <LatestMovie />
       </div>
     </div>
   );
 }
 
 export default MovieDetails;
-

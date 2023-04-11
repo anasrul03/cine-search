@@ -23,8 +23,8 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div class="bottom-bar">
-        <div class="container">
+      <div className="bottom-bar">
+        <div className="container">
           <p>&copy; 2023 Movie Search App. All rights reserved.</p>
         </div>
       </div>
