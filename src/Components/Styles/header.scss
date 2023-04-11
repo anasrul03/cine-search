@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-evenly;
   padding: 10px;
   top: 0;
   left: 0;
@@ -45,7 +46,7 @@
 }
 .input-search {
   position: relative;
-  margin-top: 10px;
+  // margin: 10px;
   flex-basis: 100%;
 
   & input {
@@ -72,9 +73,10 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .logo {
     margin-left: 0;
+    margin-right: 20px;
   }
 
   .input-search {
@@ -83,30 +85,11 @@
   }
 
   .input-search input {
+    margin: 20px 10px;
     width: 200px;
   }
-}
 
-@media (min-width: 1000px) {
-  .header {
-    font-size: 24px;
-  }
-
-  .login-button button {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-
-  .input-search {
-    margin-right: auto;
-  }
-
-  .input-search input {
-    width: 300px;
-  }
-
-  .input-search button {
-    width: 100px;
-    padding: 8px;
+  .login-button {
+    margin-top: 20px;
   }
 }

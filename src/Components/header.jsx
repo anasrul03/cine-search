@@ -16,10 +16,10 @@ function Header() {
           <h3>Our Team</h3>
         </NavLink>
       </div>
-      <div className="search">
+      <div className={"search"}>
         <SearchBar></SearchBar>
       </div>
-      <div className="login-button">
+      <div className={"login-button"}>
         <button>Login</button>
       </div>
     </div>
