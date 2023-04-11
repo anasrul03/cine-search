@@ -7,13 +7,11 @@ import { NavLink } from "react-router-dom";
 import "./Styles/MovieCard.scss";
 
 const SearchResults = () => {
-  //debugger
   const { searchTerm } = useParams();
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [movies, setMovies] = useState([]);
   const apiKey = "d62dc3f89ffd51183a0e62149a3931a4";
-  let equalTo = "2023";
 
   useEffect(() => {
     axios
@@ -22,7 +20,6 @@ const SearchResults = () => {
       )
       .then(
         (res) => {
-          debugger;
           setIsLoaded(true);
           setMovies(res.data);
           console.log("data is available");

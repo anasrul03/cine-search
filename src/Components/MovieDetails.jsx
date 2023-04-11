@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 function MovieDetails() {
+  // const result = search.getMovieTitle.results;
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState([]);
   const { id } = useParams();
@@ -33,6 +34,7 @@ function MovieDetails() {
 
     fetchMovie();
     fetchCredits();
+    // ApiStore.fetchRelatedMovie();
   }, [id]);
 
   if (!movie) {
@@ -118,6 +120,7 @@ function MovieDetails() {
           </div>
         </div>
       </div>
+      <div className="bottomlist"></div>
     </div>
   );
 }

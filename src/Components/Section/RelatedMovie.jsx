@@ -1,19 +1,18 @@
 import React from "react";
-import { observer } from "mobx-react-lite";
 import ApiStore from "../api-store";
+import { observer } from "mobx-react-lite";
 import { NavLink } from "react-router-dom";
 
-const TrendingMovie = () => {
+const RelatedMovie = (props) => {
   const apiImgUrl = "https://image.tmdb.org/t/p/w500";
-  const results = ApiStore.trending_movie.results;
+  const results = ApiStore.related_movie.results;
+  const pop = props.movieTitle;
 
   React.useEffect(() => {
-    ApiStore.fetchData(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${ApiStore.apiKey}&page=1`
-    );
+    ApiStore.fetchRelatedMovie(pop);
   }, []);
 
-  console.log(results);
+  console.log(props);
 
   return (
     <div>
@@ -21,6 +20,7 @@ const TrendingMovie = () => {
         {results &&
           results?.map((result) => {
             return (
+                result.poster_path &&
               <NavLink className="no-underline" to={`/movie/${result.id}`}>
                 <div className="card" key={result.id}>
                   <img src={apiImgUrl + result.poster_path} alt="POSTER" />
@@ -34,4 +34,4 @@ const TrendingMovie = () => {
   );
 };
 
-export default observer(TrendingMovie);
+export default observer(RelatedMovie);
