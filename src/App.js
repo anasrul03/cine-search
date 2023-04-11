@@ -10,6 +10,7 @@ import Footer from "./Components/footer";
 import SearchResults from "./Components/SearchResults";
 import TrendingMovie from "./Components/Section/TrendingMovie";
 import LatestMovie from "./Components/Section/LatestMovie";
+import AboutUs from "./Components/AboutUs";
 
 const Test = () => {
   return (
@@ -30,9 +31,12 @@ function App() {
         <Routes>
           <Route path="/search/:searchTerm" element={<SearchResults />} />
           <Route path="/" element={<Test />} />
-          <Route path="/movie/:id" element={<MovieDetails/>} />
-          <Route path="/" element={<MainpageList />} />
+
+          <Route path="/movie/:id" element={<MovieDetails />} />
+          {/* <Route path="/" element={<MainpageList />} /> */}
+
           <Route path="*" element={<NotFound />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
         </Routes>
         <Footer />
       </BrowserRouter>
