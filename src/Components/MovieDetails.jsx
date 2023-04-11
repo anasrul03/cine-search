@@ -3,20 +3,29 @@ import { useParams } from "react-router-dom";
 import LatestMovie from "./Section/LatestMovie";
 
 function MovieDetails() {
-  // const result = search.getMovieTitle.results;
+  // Initialize state variables for movie and cast
   const [movie, setMovie] = useState({});
   const [cast, setCast] = useState([]);
+
+  // Get the movie ID parameter from the URL using the useParams() hook
   const { id } = useParams();
 
+  // Make API calls to fetch movie and cast details
   useEffect(() => {
+    // Define the API key and URLs for the movie and cast details
     const apiKey = "d62dc3f89ffd51183a0e62149a3931a4";
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`;
     const creditsUrl = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${apiKey}&language=en-US`;
 
+    // Define an async function to fetch the movie details
     const fetchMovie = async () => {
       try {
+        // Make an API call to fetch the movie details using the URL
         const response = await fetch(url);
+
+        // Convert the response to JSON
         const json = await response.json();
+        // Update the state variable "movie" with the fetched movie details
         setMovie(json);
       } catch (error) {
         console.error(error);
@@ -33,17 +42,17 @@ function MovieDetails() {
       }
     };
 
+    // Call the fetchMovie() and fetchCredits() functions
     fetchMovie();
     fetchCredits();
-    // ApiStore.fetchRelatedMovie();
-  }, [id]);
+  }, [id]); // Run the useEffect() hook whenever the "id" parameter changes
 
+  // If movie details are not available, display a "Movie Not Found" message
   if (!movie) {
     return <h1> Movie Not Found </h1>;
   }
 
   return (
-    
     <div className="movie_details">
       <div className="movie__header">
         <img
@@ -118,19 +127,16 @@ function MovieDetails() {
                 </p>
               </a>
             )}
-
-           <div className="bottomlist">
-            <LatestMovie/>
-           </div>
+            <h1>Latest Movies</h1>
+            <div className="bottomlist">
+              <LatestMovie />
+            </div>
           </div>
         </div>
-        
       </div>
-   
     </div>
-      
-      
   );
 }
 
 export default MovieDetails;
+

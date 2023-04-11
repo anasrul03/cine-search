@@ -260,7 +260,7 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .logo {
     margin-left: 0;
   }
@@ -272,29 +272,5 @@
 
   .input-search input {
     width: 200px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .header {
-    font-size: 24px;
-  }
-
-  .login-button button {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-
-  .input-search {
-    margin-right: auto;
-  }
-
-  .input-search input {
-    width: 300px;
-  }
-
-  .input-search button {
-    width: 100px;
-    padding: 8px;
   }
 }

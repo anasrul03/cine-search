@@ -194,15 +194,28 @@ $movie-year-color: white;
 }
 
 .bottomlist{
-	display: flex;
-	position: relative;
-	align-items: center; // vertically center align items
-  justify-content: center; // horizontally center align items
-  width: 100px;
-  height: 53vh;
 
-
+    padding: 70px;
+    margin: -70px -378px;
+    left: -30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 119vh;
+    
 }
+
+h1{
+  position: relative;
+  margin: 29px 606px 5px 0px;
+}
+
+
+
+
 
 
 

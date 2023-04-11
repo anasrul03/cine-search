@@ -34,9 +34,7 @@ function App() {
           <Route path="/" element={<MainpageList />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      <footer>
         <Footer />
-      </footer>
       </BrowserRouter>
     </div>
   );
