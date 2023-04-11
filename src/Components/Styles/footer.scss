@@ -59,14 +59,16 @@
 // }
 .body{
   overflow-x: hidden;
+  
 }
 footer {
-  background-color:#333;
+  background-color: #333;
   color: #fff;
   padding: 5px 0;
   width: 100%;
-  margin-top:70px;
+  margin-top: 732px;
   text-align: center;
+  
 
   
   & h4 {
@@ -103,7 +105,7 @@ footer {
   //position: sticky;
   //bottom: 0;
   left: 0;
-  margin-bottom: 0px;
+  margin-bottom: -113px;
  
   & p {
     margin-bottom: 0;
@@ -116,12 +118,17 @@ footer {
 .container {
   width: 100%;
   max-width: 1000px;
-  margin: auto;
+  margin: -37px 0px 28px 404px;
   padding: 20px 15px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
  
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   footer ul {
     flex-direction: column;
     max-width: 400px;
