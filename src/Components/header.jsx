@@ -5,12 +5,11 @@ import SearchBar from "./searchBar";
 import "./Styles/header.scss";
 import { NavLink, Route, Routes, useNavigate } from "react-router-dom";
 
-
 function Header() {
   // const navigate = useNavigate();
   // const navigateToLogin = () => {
   //   //navigate user to login
-  //   navigate('/login'); 
+  //   navigate('/login');
   // }
   //const [results, setResults] = useState([]);
   return (
