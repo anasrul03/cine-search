@@ -31,11 +31,21 @@ const SearchResults = () => {
           console.log("data error");
         }
       );
-  }, []);
+  }, [searchTerm]);
 
   return (
     <div>
       {/* <h1>Latest Movie</h1> */}
+      {/* <div className="list-button">
+        {movies.length > 0 ? (
+        <MovieCard getmMovies={movies} />
+        ) : (
+          <p>No movies found!</p>
+        )}
+        <NavLink to="/">
+          <button>&laquo; Back</button>
+        </NavLink>
+      </div> */}
 
       <div className="list-button">
         <MovieCard getmMovies={movies} />

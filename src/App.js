@@ -17,6 +17,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./Components/Firebase";
 import PrivateRoute from "./Components/PrivateRoute";
 import Profile from "./Components/Profile";
+import AboutUs from "./Components/AboutUs";
 
 
 const Test = () => {
@@ -65,6 +66,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/AboutUs" element={<AboutUs />} />
         </Routes>
         <Footer />
       </BrowserRouter>
