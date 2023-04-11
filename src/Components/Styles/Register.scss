@@ -1,0 +1,118 @@
+$primary-color: #92bcea;
+$secondary-color: #171a21;
+$body-color: #171a21;
+$movie-title-color: white;
+$movie-year-color: white;
+$text-color: white;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    background-color: $body-color;
+    font-family: 'Monsterrat', sans-serif;
+}
+
+// .register {
+//     height: 100vh;
+//     width: 100vw;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+
+//     &__container {
+//         display: flex;
+//         flex-direction: column;
+//         text-align: center;
+//         background-color: #dcdcdc;
+//         padding: 30px;
+//     }
+
+//     &___textBox {
+//         padding: 10px;
+//         font-size: 18px;
+//         margin-bottom: 10px;
+//     }
+
+//     &__btn {
+//         padding: 10px;
+//         font-size: 18px;
+//         margin-bottom: 10px;
+//         border: none;
+//         color: $text-color;
+//         background-color: $body-color;
+//     }
+
+//     &__google {
+//         background-color: #4285f4;
+//     }
+
+//     div {
+//         margin-top: 7px;
+//     }
+// }
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        color: $text-color;
+    }
+}
+
+.auth {
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid #dcdcdc;
+    padding: 20px;
+    text-align: center;
+
+    h2 {
+        color: $text-color;
+    }
+
+    &__success {
+        padding: 10px 0;
+        background-color: hsl(147, 79%, 87%);
+        margin-bottom: 20px;
+    }
+
+    &__error {
+        padding: 10px 0;
+        background-color: hsl(0, 79%, 87%);
+        margin-bottom: 20px;
+    }
+
+    span {
+        color: $text-color;
+    }
+}
+
+.auth form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin: 0 auto 10px auto;
+
+        & > input {
+            height: 40px;
+            font-size: 16px;
+            padding: 0 10px;
+        }
+
+        & > button {
+            margin: 0;
+            height: 40px;
+            font-size: 16px;
+            padding: 0 10px;
+        }
+
+        .login__google {
+            margin: auto;
+            height: 40px;
+            font-size: 16px;
+            padding: 0 10px;
+            color: $body-color;
+        }
+}
